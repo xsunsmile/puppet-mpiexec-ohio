@@ -1,7 +1,6 @@
 class mpiexec::compile {
 
 	$mongodb_host = extlookup('mongodb_host')
-	package { "build-essential": ensure => installed }
 
 	file { "${mpiexec::params::install_src}":
 		ensure => directory,
