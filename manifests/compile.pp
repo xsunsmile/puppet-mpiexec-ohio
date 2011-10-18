@@ -18,7 +18,7 @@ class mpiexec::compile {
 		require => File["${mpiexec::params::install_src}"],
 	}
 
-	exec { "download":
+	exec { "download-mpiexec":
 		cwd => "${mpiexec::params::install_src}",
 		command => "/bin/sh fetch.sh",
 		onlyif => "test ! -e ${mpiexec::params::install_src}/mpiexec",
