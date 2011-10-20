@@ -1,7 +1,8 @@
 
 class mpiexec::pkg_install {
 
-	$version = $mpiexec::params::mpiexec_version
+	# $version = ${mpiexec::params::mpiexec_version}
+	$version = extlookup('mpiexec_version')
 	$arch = $architecture ? {
 		/x86_64|amd64/ => 'amd64',
 		default => 'i386',
